@@ -10,10 +10,9 @@ from ship import Ship
 from alien import AlienFleet
 from settings import Settings
 from sound import Sound
-import barrier
+#import barrier
 from alien_laser import AlienLasers
 from pygame.sprite import Group
-import random
 
 class Game:
     RED = (255, 0, 0)
