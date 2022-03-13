@@ -4,7 +4,7 @@ from pygame.sprite import Sprite, Group
 from copy import copy
 from random import randint
 from sound import Sound
-import alien as alien
+import alien
 from game_stats import Stats
 
 

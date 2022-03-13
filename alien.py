@@ -68,6 +68,9 @@ class AlienFleet:
         for alien in self.fleet.sprites():
             alien.change_v(v)
 
+    def get_sprites(self):
+        return self.fleet.sprites()
+
     def check_bottom(self): 
       for alien in self.fleet.sprites():
         if alien.check_bottom():

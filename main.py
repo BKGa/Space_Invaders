@@ -13,6 +13,7 @@ from sound import Sound
 import barrier
 from alien_laser import AlienLasers
 from pygame.sprite import Group
+import random
 
 class Game:
     RED = (255, 0, 0)
@@ -59,6 +60,12 @@ class Game:
         self.lasers.update()
         self.alien_lasers.update()
         self.sb.update()
+        #shoot = random.randint(1,9)
+        #if shoot == 8:
+        #    self.alien_lasers.fire()
+        #if enumerate(self.alien_fleet.get_sprites()) >= 22:
+        #    self.sound.play_music('sounds/star_trek_theme.wav', volume=0.6)
+
 
 
 
@@ -71,18 +78,6 @@ class Game:
         self.barrier.draw(self.screen)
         pg.display.flip()
 
-    def collision_checks(self):
-
-        #Check the ships lasers
-        if self.lasers.lasers:
-            for laser in self.laser.lasers:
-                if pg.sprite.spritecollide(laser, self.blocks, True):
-                    laser.kill(self.blocks)
-                aliens_hit = pg.sprite.spritecollide(laser, self.alien_fleet, True)
-                if aliens_hit:
-                    for alien in aliens_hit:
-                        self.score += alien.value
-                    laser.kill()
 
     def play(self):
         self.finished = False
